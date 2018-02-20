@@ -13,7 +13,17 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+        if (handSign.toLowerCase().equals("rock")) {
+            return PAPER;
+        }
+        else if (handSign.toLowerCase().equals("paper")) {
+            return SCISSOR;
+        }
+        else if (handSign.toLowerCase().equals("scissor")) {
+            return ROCK;
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -21,7 +31,18 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+
+        if (handSign.toLowerCase().equals("rock")) {
+            return SCISSOR;
+        }
+        else if (handSign.toLowerCase().equals("paper")) {
+            return ROCK;
+        }
+        else if (handSign.toLowerCase().equals("scissor")) {
+            return PAPER;
+        } else {
+            return null;
+        }
     }
 
     /**
@@ -30,6 +51,31 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+
+        if (handSignOfPlayer1.toLowerCase().equals("rock") && handSignOfPlayer2.toLowerCase().equals("paper")) {
+            return PAPER;
+        }
+        else if (handSignOfPlayer1.toLowerCase().equals("rock") && handSignOfPlayer2.toLowerCase().equals("scissor")) {
+            return ROCK;
+        }
+        else if (handSignOfPlayer1.toLowerCase().equals("rock") && handSignOfPlayer2.toLowerCase().equals("rock")) {
+            return null;
+        }
+        else if (handSignOfPlayer1.toLowerCase().equals("paper") && handSignOfPlayer2.toLowerCase().equals("paper")) {
+            return null;
+        }
+        else if (handSignOfPlayer1.toLowerCase().equals("paper") && handSignOfPlayer2.toLowerCase().equals("scissor")) {
+            return SCISSOR;
+
+        } else if (handSignOfPlayer1.toLowerCase().equals("paper") && handSignOfPlayer2.toLowerCase().equals("rock")) {
+            return PAPER;
+
+        } else if (handSignOfPlayer1.toLowerCase().equals("scissor") && handSignOfPlayer2.toLowerCase().equals("paper")) {
+            return SCISSOR;
+        } else if (handSignOfPlayer1.toLowerCase().equals("scissor") && handSignOfPlayer2.toLowerCase().equals("rock")) {
+            return ROCK;
+        } else if (handSignOfPlayer1.toLowerCase().equals("scissor") && handSignOfPlayer2.toLowerCase().equals("scissor")) {
+            return null;
+        } else return null;
     }
 }
